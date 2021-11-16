@@ -1,0 +1,192 @@
+
+\documentclass[12pt]{book}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{float}
+\setcounter{secnumdepth}{3}
+\usepackage{booktabs}
+\usepackage[caption = false]{subfig}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\titleformat*{\section}{\LARGE\bfseries}
+\titleformat*{\subsection}{\Large\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
+\titleformat*{\paragraph}{\large\bfseries}
+\titleformat*{\subparagraph}{\large\bfseries}
+\usepackage{pgfplots}
+\usepackage{adjustbox}
+\renewcommand{\&}{\textup{\symbol{`\&}}}
+\interfootnotelinepenalty=10000
+% \usepackage{biblatex}
+% Check the settings here for natbib
+\usepackage[nottoc]{tocbibind}
+\usepackage[round]{natbib}
+
+
+
+% \addbibresource{references.bib}
+
+\title{Emotion Identification in Italian Opera}
+\author{\textbf{Zhang Shibingfeng}\\
+Supervisor: Alberto Barr\'on Cede\~no \\
+Co-supervisor: Adriano Ferraresi\\
+Department of Interpreting and Translation\\
+Alma Mater Studiorum--Universit\`a di Bologna\\
+Forl\`i, Italy
+}
+\date{June 2021}
+\pgfplotsset{compat=1.15}
+\begin{document}
+%\maketitle
+\begin{center}
+{{\Large{Alma Mater Studiorum $\cdot$ Universit\`a di
+Bologna\\}}}
+\vspace{5mm}
+\mbox{\large{DIPARTIMENTO DI INTERPRETAZIONE E TRADUZIONE}}
+\vspace{5mm}
+{\small{\bf Corso di Laurea magistrale in Specialized Translation (classe 
+LM-xx) }}
+\end{center}
+\vspace{15mm}
+\begin{center}
+{TESI DI LAUREA\\in [COMPUTATIONAL LINGUISTICS]}
+\end{center}
+
+\vspace{15mm}
+\begin{center}
+\mbox{\LARGE{\bf TITLE}}
+\end{center}
+\vspace{35mm}
+\par
+\noindent
+\begin{minipage}[t]{0.47\textwidth}
+{\large{\bf CANDIDAT?:\\
+NAME\\}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\textwidth}\raggedleft
+{\large{\bf Relatore:\\NAME
+}}
+\end{minipage}
+
+\hfill
+\begin{minipage}[t]{0.47\textwidth}\raggedleft
+{\large{\bf Correlatore:\\
+NAME}}
+\end{minipage}
+
+\vspace{20mm}
+\begin{center}
+{\bf Anno Accademico 20??/20??\\
+XXX Appello}
+\end{center}
+\thispagestyle{empty}
+\renewcommand{\thepage}{\roman{page}}%
+\chapter*{Acknowledgements}
+\thispagestyle{empty}
+
+
+
+\chapter*{Abstract}
+
+
+
+
+
+% My contributions in this work are following:
+% \begin{enumerate}
+%     \item 
+% \end{enumerate}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\chapter{Introduction}
+\label{ch:intro}
+\renewcommand{\thepage}{\arabic{page}}%
+
+
+
+\section{General and Specific Objectives}
+\label{General and specific objectives}
+
+
+\begin{enumerate}
+\item 
+\end{enumerate}
+
+
+\section{Dissertation Structure}
+\label{sec:ch1_diss-structure}
+
+This dissertation is composed of X chapters.
+
+Chapter 2 
+
+Chapter X
+
+
+\chapter{Another chapter}
+
+
+\section[SECTION WITH LONG TITLE]{A SECTION WITH A 
+RIDICULOUSLY LONG TITLE}
+\label{sec:ch2_long_title}
+
+
+\begin{figure}[t]
+\centering
+A figure
+\caption{A figure.}
+\label{fig:nn}
+\end{figure}
+
+
+An equation
+\begin{equation}
+f(a) = \frac{e^{a_i}}{\sum_{k}^{} e^{a_k}}
+\end{equation}
+
+Citations in different formats: \citep{lane2019natural} and  
+\citet{jones1972statistical}. A reference to 
+Section~\ref{sec:ch1_diss-structure}.
+
+\subsection{A SUB-SECTION}
+\label{sub:sub}
+
+\begin{table}[t]
+\centering
+  \begin{tabular}{p{3cm}p{3cm}} 
+ \hline
+ word & One\ hot vector\\
+ \hline
+ andrew & [1, 0, 0, 0, 0] \\ 
+ is & [0, 1, 0, 0, 0] \\
+
+ a & [0, 0, 1, 0, 0] \\
+
+ sweet & [0, 0, 0, 1, 0]\\
+
+ guy & [0, 0, 0, 0, 1]\\ 
+ \hline
+\end{tabular}
+\caption{A table.}
+\label{tab:wordnvec}
+\end{table}
+
+A footnote.%
+\footnote{With a URl \url{www.duckduckgo.com}.}
+
+
+\bibliography{references}
+\bibliographystyle{plainnat}
+
+\appendix
+
+\chapter{An appendix}
+
+\chapter{Another appendix}
+
+\end{document}
