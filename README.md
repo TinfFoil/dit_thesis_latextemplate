@@ -1,7 +1,11 @@
 # UniBO-DIT Masters thesis Latex template
 
-A minimalistic template to write a beautiful masters dissertation for UniBO-DIT. 
-It contains just the basic files to start writing a disertation: the main latex
+This is a minimalistic template to write a beautiful masters dissertation for UniBO-DIT. 
+It is primarily intended for students who write NLP thesis. You are welcome to use it 
+even if you are working in a different field, but it would not hurt if you let us know
+before.
+
+The project contains just the basic files to start writing a disertation: the main latex
 file, a tiny bib file, and and a nice bst file.
 
 ## Description
