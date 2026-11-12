@@ -6,7 +6,9 @@ even if you are working in a different field, but it would not hurt if you let u
 before.
 
 The project contains just the basic files to start writing a disertation: the main latex
-file, a tiny bib file, and and a nice bst file.
+file (`main.tex`, with the preamble, title page and front matter), one file per chapter
+and appendix in `chapters/`, the university logo in `figs/`, a tiny bib file, and a nice
+bst file.
 
 ## Description
 

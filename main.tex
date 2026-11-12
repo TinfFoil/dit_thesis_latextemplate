@@ -1,14 +1,22 @@
-
-\documentclass[12pt]{book}
+\documentclass[12pt,twoside]{book}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+% \usepackage{emptypage} % No header or page number on blank pages.
 \usepackage{titlesec}
 \usepackage{graphicx}
 \usepackage{csquotes}
 \usepackage{float}
 \setcounter{secnumdepth}{3}
 \usepackage{booktabs}
-\usepackage[caption = false]{subfig}
+\usepackage{subcaption}
 \usepackage{amsmath}
-\usepackage{hyperref}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\usepackage{cleveref}
+% Work around missing subref labels with amsmath and subcaption.
+% https://github.com/latex3/latex2e/issues/2172
+\makeatletter
+\g@addto@macro\caption@subtypehook{\let\ltx@label\label}
+\makeatother
 \titleformat*{\section}{\LARGE\bfseries}
 \titleformat*{\subsection}{\Large\bfseries}
 \titleformat*{\subsubsection}{\large\bfseries}
@@ -28,62 +36,64 @@
 
 % \addbibresource{references.bib}
 
-\title{Emotion Identification in Italian Opera}
-\author{\textbf{Zhang Shibingfeng}\\
-Supervisor: Alberto Barr\'on Cede\~no \\
-Co-supervisor: Adriano Ferraresi\\
-Department of Interpreting and Translation\\
-Alma Mater Studiorum--Universit\`a di Bologna\\
-Forl\`i, Italy
-}
-\date{June 2021}
 \pgfplotsset{compat=1.15}
-\begin{document}
-%\maketitle
-\begin{center}
-{{\Large{Alma Mater Studiorum $\cdot$ Universit\`a di
-Bologna\\}}}
-\vspace{5mm}
-\mbox{\large{DIPARTIMENTO DI INTERPRETAZIONE E TRADUZIONE}}
-\vspace{5mm}
-{\small{\bf Corso di Laurea magistrale in Specialized Translation (classe 
-LM-xx) }}
-\end{center}
-\vspace{15mm}
-\begin{center}
-{TESI DI LAUREA\\in [COMPUTATIONAL LINGUISTICS]}
-\end{center}
 
-\vspace{15mm}
-\begin{center}
-\mbox{\LARGE{\bf TITLE}}
-\end{center}
-\vspace{35mm}
-\par
+\begin{document}
+
+\begin{titlepage}
+\newgeometry{top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
+\centering
+
+\includegraphics[width=0.4\textwidth]{./figs/alma_mater_logo.png}\\[0.3cm]
+
+\vspace{0.5cm}
+
+{DIPARTIMENTO DI INTERPRETAZIONE E TRADUZIONE\par}
+\vspace{0.5cm}
+{CORSO DI LAUREA MAGISTRALE IN\par}
+\vspace{0.5cm}
+{SPECIALIZED TRANSLATION\par}
+\vspace{0.5cm}
+{\normalsize Classe LM-xx\par}
+
+\vspace{0.5cm}
+
+\begin{flushleft}
+\textbf{Tesi di laurea in:} [COMPUTATIONAL LINGUISTICS]
+\end{flushleft}
+
+\vspace{1cm}
+{\Large TITLE\par}
+\vspace{1cm}
+
+\vspace{1cm}
+
 \noindent
 \begin{minipage}[t]{0.47\textwidth}
-{\large{\bf CANDIDAT?:\\
-NAME\\}}
+\raggedright
+\textbf{Candidat?}\\[0.3cm]
+NAME
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.47\textwidth}\raggedleft
-{\large{\bf Relatore:\\NAME
-}}
+\begin{minipage}[t]{0.47\textwidth}
+\raggedright
+\textbf{Relatore}\\[0.3cm]
+NAME\\[0.5cm]
+\textbf{Correlatore}\\[0.3cm]
+NAME
 \end{minipage}
 
-\hfill
-\begin{minipage}[t]{0.47\textwidth}\raggedleft
-{\large{\bf Correlatore:\\
-NAME}}
-\end{minipage}
+\vfill
 
-\vspace{20mm}
-\begin{center}
-{\bf Anno Accademico 20??/20??\\
-XXX Appello}
-\end{center}
-\thispagestyle{empty}
-\renewcommand{\thepage}{\roman{page}}%
+{\normalsize\textbf{Anno Accademico 20??/20??}\par}
+\vspace{0.3cm}
+{\normalsize\textbf{XXX Appello}}
+
+\end{titlepage}
+\restoregeometry
+
+\frontmatter % Start Roman-numbered front matter on a right-hand page.
+
 \chapter*{Acknowledgements}
 \thispagestyle{empty}
 
@@ -97,101 +107,24 @@ XXX Appello}
 
 % My contributions in this work are following:
 % \begin{enumerate}
-%     \item 
+%     \item
 % \end{enumerate}
 
 \tableofcontents
 \listoffigures
 \listoftables
 
-\chapter{Introduction}
-\label{ch:intro}
-\renewcommand{\thepage}{\arabic{page}}%
+\mainmatter % Start Arabic-numbered main matter on a right-hand page.
 
-
-
-\section{General and Specific Objectives}
-\label{General and specific objectives}
-
-
-\begin{enumerate}
-\item 
-\end{enumerate}
-
-
-\section{Dissertation Structure}
-\label{sec:ch1_diss-structure}
-
-This dissertation is composed of X chapters.
-
-Chapter 2 
-
-Chapter X
-
-
-\chapter{Another chapter}
-
-
-\section[SECTION WITH LONG TITLE]{A SECTION WITH A 
-RIDICULOUSLY LONG TITLE}
-\label{sec:ch2_long_title}
-
-
-\begin{figure}[t]
-\centering
-A figure
-\caption{A figure.}
-\label{fig:nn}
-\end{figure}
-
-
-An equation
-\begin{equation}
-f(a) = \frac{e^{a_i}}{\sum_{k}^{} e^{a_k}}
-\end{equation}
-
-Citations in different formats: \citep{lane2019natural} and  
-\citet{jones1972statistical}. A reference to 
-Section~\ref{sec:ch1_diss-structure}.
-
-\subsection{A SUB-SECTION}
-\label{sub:sub}
-
-\begin{table}[t]
-\centering
-  \begin{tabular}{p{3cm}p{3cm}} 
- \hline
- word & One\ hot vector\\
- \hline
- andrew & [1, 0, 0, 0, 0] \\ 
- is & [0, 1, 0, 0, 0] \\
-
- a & [0, 0, 1, 0, 0] \\
-
- sweet & [0, 0, 0, 1, 0]\\
-
- guy & [0, 0, 0, 0, 1]\\ 
- \hline
-\end{tabular}
-\caption{A table.}
-\label{tab:wordnvec}
-\end{table}
-
-A footnote.%
-\footnote{With a URl \url{www.duckduckgo.com}.}
-
-\todo{A todo note in the margin}
-
-\todo[inline]{An in-line todo note}
-
+\input{chapters/ch1.tex}
+\input{chapters/ch2.tex}
 
 \bibliography{references}
 \bibliographystyle{plainnat}
 
 \appendix
 
-\chapter{An appendix}
-
-\chapter{Another appendix}
+\input{chapters/app_a.tex}
+\input{chapters/app_b.tex}
 
 \end{document}
