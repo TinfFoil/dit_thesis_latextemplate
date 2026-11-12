@@ -1,0 +1,24 @@
+.vscode/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.tdo
+*.toc
+*.xdv
+
+# Compiled document (figures in figs/ stay tracked)
+/main.pdf
